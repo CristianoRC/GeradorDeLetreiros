@@ -1,6 +1,9 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Windows.Forms;
 
 namespace GeradorDeLetreiros
 {
@@ -53,12 +56,43 @@ namespace GeradorDeLetreiros
 
         private void pic_rigth_Click(object sender, EventArgs e)
         {
-            label_Itinerario.Left -= 5;
+            label_Itinerario.Left += 15;
         }
 
         private void pic_Lef_Click(object sender, EventArgs e)
         {
-            label_Itinerario.Left += 5;
+            label_Itinerario.Left -= 15;
+        }
+
+        private void Btm_GerarLetreiro_Click(object sender, EventArgs e)
+        {
+            salvarItinerario();
+        }
+
+        private void salvarItinerario()
+        {
+            Control c = label_Itinerario;
+            System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(c.Width, c.Height);
+            c.DrawToBitmap(bmp, c.ClientRectangle);
+
+            SaveFileDialog sf = new SaveFileDialog();
+
+            sf.FileName = "itinerario.JPEG";
+            sf.Title = "Salvar itinerário";
+            sf.RestoreDirectory = true;
+            sf.AddExtension = true;
+            sf.Filter = "Images (*.Png + Jpeg)|*.Png + *.Jpeg";
+
+            if (sf.ShowDialog() == DialogResult.OK)
+            {
+                bmp.Save(sf.FileName, ImageFormat.Jpeg);
+
+                MessageBox.Show("Arquivo salvo com sucesso","Sucesso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Escolha um local para salvar seu arquivo", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

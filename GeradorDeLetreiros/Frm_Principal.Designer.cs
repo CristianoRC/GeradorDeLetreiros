@@ -40,11 +40,13 @@
             this.pic_rigth = new System.Windows.Forms.PictureBox();
             this.pic_Lef = new System.Windows.Forms.PictureBox();
             this.Btm_Fonte = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panelLetreiro = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLetreiro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_up)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_down)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_rigth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Lef)).BeginInit();
+            this.panelLetreiro.SuspendLayout();
             this.SuspendLayout();
             // 
             // Txt_Entrada
@@ -67,12 +69,12 @@
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(109, 301);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(77, 18);
+            this.materialLabel1.Size = new System.Drawing.Size(81, 19);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Itinerário - ";
             // 
@@ -88,6 +90,7 @@
             this.Btm_GerarLetreiro.TabIndex = 2;
             this.Btm_GerarLetreiro.Text = "Salvar";
             this.Btm_GerarLetreiro.UseVisualStyleBackColor = true;
+            this.Btm_GerarLetreiro.Click += new System.EventHandler(this.Btm_GerarLetreiro_Click);
             // 
             // fontDialog1
             // 
@@ -106,8 +109,9 @@
             // 
             // pictureBoxLetreiro
             // 
+            this.pictureBoxLetreiro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxLetreiro.Image = global::GeradorDeLetreiros.Properties.Resources.Letreiro_Base;
-            this.pictureBoxLetreiro.Location = new System.Drawing.Point(12, 77);
+            this.pictureBoxLetreiro.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxLetreiro.Name = "pictureBoxLetreiro";
             this.pictureBoxLetreiro.Size = new System.Drawing.Size(1025, 131);
             this.pictureBoxLetreiro.TabIndex = 0;
@@ -144,7 +148,7 @@
             this.pic_rigth.BackColor = System.Drawing.Color.Transparent;
             this.pic_rigth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_rigth.Image = global::GeradorDeLetreiros.Properties.Resources.ic_keyboard_arrow_right_white_48px;
-            this.pic_rigth.Location = new System.Drawing.Point(985, 209);
+            this.pic_rigth.Location = new System.Drawing.Point(991, 214);
             this.pic_rigth.Name = "pic_rigth";
             this.pic_rigth.Size = new System.Drawing.Size(41, 38);
             this.pic_rigth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -157,7 +161,7 @@
             this.pic_Lef.BackColor = System.Drawing.Color.Transparent;
             this.pic_Lef.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Lef.Image = global::GeradorDeLetreiros.Properties.Resources.ic_keyboard_arrow_left_white_48px;
-            this.pic_Lef.Location = new System.Drawing.Point(902, 209);
+            this.pic_Lef.Location = new System.Drawing.Point(908, 214);
             this.pic_Lef.Name = "pic_Lef";
             this.pic_Lef.Size = new System.Drawing.Size(41, 38);
             this.pic_Lef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -179,18 +183,28 @@
             this.Btm_Fonte.UseVisualStyleBackColor = true;
             this.Btm_Fonte.Click += new System.EventHandler(this.Btm_Fonte_Click);
             // 
+            // panelLetreiro
+            // 
+            this.panelLetreiro.BackColor = System.Drawing.Color.Transparent;
+            this.panelLetreiro.Controls.Add(this.pictureBoxLetreiro);
+            this.panelLetreiro.ForeColor = System.Drawing.Color.Transparent;
+            this.panelLetreiro.Location = new System.Drawing.Point(12, 77);
+            this.panelLetreiro.Name = "panelLetreiro";
+            this.panelLetreiro.Size = new System.Drawing.Size(1025, 131);
+            this.panelLetreiro.TabIndex = 10;
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1097, 440);
+            this.Controls.Add(this.label_Itinerario);
+            this.Controls.Add(this.panelLetreiro);
             this.Controls.Add(this.pic_Lef);
             this.Controls.Add(this.pic_rigth);
             this.Controls.Add(this.pic_down);
             this.Controls.Add(this.pic_up);
             this.Controls.Add(this.Btm_Fonte);
-            this.Controls.Add(this.label_Itinerario);
-            this.Controls.Add(this.pictureBoxLetreiro);
             this.Controls.Add(this.Btm_GerarLetreiro);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.Txt_Entrada);
@@ -205,6 +219,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_down)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_rigth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Lef)).EndInit();
+            this.panelLetreiro.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,6 +238,7 @@
         private System.Windows.Forms.PictureBox pic_rigth;
         private System.Windows.Forms.PictureBox pic_Lef;
         private MaterialSkin.Controls.MaterialRaisedButton Btm_Fonte;
+        private System.Windows.Forms.Panel panelLetreiro;
 
     }
 }
