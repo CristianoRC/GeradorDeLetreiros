@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GeradorDeLetreiros")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Gerador De Letreiros")]
+[assembly: AssemblyDescription("Gerador de letreiros para o jogo - Proton Bus Simulator")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Cristiano Cunha")]
 [assembly: AssemblyProduct("GeradorDeLetreiros")]

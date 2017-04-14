@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GeradorDeLetreiros</RootNamespace>
-    <AssemblyName>GeradorDeLetreiros</AssemblyName>
+    <AssemblyName>Gerador De Letreiros</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Atualizacoes.cs" />
     <Compile Include="Frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -41,6 +41,8 @@
             this.pic_Lef = new System.Windows.Forms.PictureBox();
             this.Btm_Fonte = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelLetreiro = new System.Windows.Forms.Panel();
+            this.Btm_Cor = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLetreiro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_up)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_down)).BeginInit();
@@ -53,7 +55,7 @@
             // 
             this.Txt_Entrada.Depth = 0;
             this.Txt_Entrada.Hint = "";
-            this.Txt_Entrada.Location = new System.Drawing.Point(202, 296);
+            this.Txt_Entrada.Location = new System.Drawing.Point(214, 296);
             this.Txt_Entrada.MouseState = MaterialSkin.MouseState.HOVER;
             this.Txt_Entrada.Name = "Txt_Entrada";
             this.Txt_Entrada.PasswordChar = '\0';
@@ -74,15 +76,15 @@
             this.materialLabel1.Location = new System.Drawing.Point(109, 301);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(81, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(69, 19);
             this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "Itinerário - ";
+            this.materialLabel1.Text = "Itinerário";
             // 
             // Btm_GerarLetreiro
             // 
             this.Btm_GerarLetreiro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btm_GerarLetreiro.Depth = 0;
-            this.Btm_GerarLetreiro.Location = new System.Drawing.Point(202, 346);
+            this.Btm_GerarLetreiro.Location = new System.Drawing.Point(214, 346);
             this.Btm_GerarLetreiro.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btm_GerarLetreiro.Name = "Btm_GerarLetreiro";
             this.Btm_GerarLetreiro.Primary = true;
@@ -193,11 +195,26 @@
             this.panelLetreiro.Size = new System.Drawing.Size(1025, 131);
             this.panelLetreiro.TabIndex = 10;
             // 
+            // Btm_Cor
+            // 
+            this.Btm_Cor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btm_Cor.Depth = 0;
+            this.Btm_Cor.Location = new System.Drawing.Point(81, 214);
+            this.Btm_Cor.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btm_Cor.Name = "Btm_Cor";
+            this.Btm_Cor.Primary = true;
+            this.Btm_Cor.Size = new System.Drawing.Size(63, 33);
+            this.Btm_Cor.TabIndex = 11;
+            this.Btm_Cor.Text = "Cor";
+            this.Btm_Cor.UseVisualStyleBackColor = true;
+            this.Btm_Cor.Click += new System.EventHandler(this.Btm_Cor_Click);
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1097, 440);
+            this.Controls.Add(this.Btm_Cor);
             this.Controls.Add(this.label_Itinerario);
             this.Controls.Add(this.panelLetreiro);
             this.Controls.Add(this.pic_Lef);
@@ -214,6 +231,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerador de letreiros";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Frm_Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLetreiro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_up)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_down)).EndInit();
@@ -239,6 +257,8 @@
         private System.Windows.Forms.PictureBox pic_Lef;
         private MaterialSkin.Controls.MaterialRaisedButton Btm_Fonte;
         private System.Windows.Forms.Panel panelLetreiro;
+        private MaterialSkin.Controls.MaterialRaisedButton Btm_Cor;
+        private System.Windows.Forms.ColorDialog colorDialog1;
 
     }
 }
