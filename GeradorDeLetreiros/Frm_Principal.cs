@@ -77,9 +77,16 @@ namespace GeradorDeLetreiros
 
         private void salvarItinerario()
         {
+            string textoLetreiro = label_Itinerario.Text;
+
+            label_Itinerario.Text = String.Format("\n {0} \n ",textoLetreiro);
+            //Adicionando uma lnha em branco na parte de cima e baixo do texto
+
             Control c = label_Itinerario;
             System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(c.Width, c.Height);
             c.DrawToBitmap(bmp, c.ClientRectangle);
+
+            label_Itinerario.Text = textoLetreiro;
 
             SaveFileDialog sf = new SaveFileDialog();
 
